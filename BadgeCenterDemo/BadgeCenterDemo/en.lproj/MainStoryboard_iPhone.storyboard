@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="cki-f7-99J">
+                            <view contentMode="scaleToFill" id="cki-f7-99J" userLabel="badges section">
                                 <rect key="frame" x="0.0" y="69" width="320" height="391"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
@@ -40,6 +40,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </scrollView>
                     <connections>
+                        <outlet property="backgroundView" destination="oqQ-Sd-yZW" id="J51-J6-D31"/>
                         <outlet property="badgesView" destination="cki-f7-99J" id="iaE-FZ-bpz"/>
                         <outlet property="header" destination="5Fk-I6-hNb" id="9fv-T0-ecY"/>
                         <outlet property="subtitle" destination="qtV-OU-Wt7" id="KfU-sx-cH0"/>

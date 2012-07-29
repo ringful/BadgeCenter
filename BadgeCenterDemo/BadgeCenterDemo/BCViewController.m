@@ -19,13 +19,19 @@ int const kBadgeViewHeight = 100;
 @end
 
 @implementation BCViewController
+@synthesize backgroundView = _backgroundView;
 @synthesize badgesView = _badgesView;
 @synthesize header = _header;
 @synthesize subtitle = _subtitle;
 
+static const NSString* kBCOptionBackground = @"background";
+
 - (void)viewDidLoad
 {    
     [super viewDidLoad];
+    [self loadPreferences];
+    
+    [self setBackground];
     
     self.header.text = @"Badge Collection";
     self.subtitle.text = @"You have earned X of Y badges";
@@ -48,7 +54,25 @@ int const kBadgeViewHeight = 100;
 
                    nil];
     
+    
     [self renderBadgesInto:self.badgesView];
+}
+
+-(void) setBackground {
+    NSString* imageName = [self.badgeOptions objectForKey:kBCOptionBackground];
+    if (imageName) {
+        UIImage *image = [UIImage imageNamed:imageName];
+        if (image) {
+            self.backgroundView.image = image;
+        }
+    }
+}
+
+-(void) loadPreferences {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BCBadgeDefinitions" ofType:@"plist"];
+    if (path) {
+        self.badgeOptions = [[NSMutableDictionary alloc]initWithContentsOfFile:path];
+    }
 }
 
 - (void) renderBadgesInto:(UIView *) parentView {
@@ -100,6 +124,9 @@ int const kBadgeViewHeight = 100;
     [self setBadgesView:nil];
     [self setTitle:nil];
     [self setSubtitle:nil];
+    [self setBadgeOptions:nil];
+    
+    [self setBackgroundView:nil];
     [super viewDidUnload];
 }
 

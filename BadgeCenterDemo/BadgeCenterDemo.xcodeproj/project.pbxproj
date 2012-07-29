@@ -58,6 +58,7 @@
 		944E500515C347D900A76B1D /* socialite-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E4FE115C347D900A76B1D /* socialite-3.png */; };
 		944E500615C347D900A76B1D /* socialite-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 944E4FE215C347D900A76B1D /* socialite-4.png */; };
 		9492C2F615C3599A00739FA2 /* BCBadgeLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492C2F515C3599A00739FA2 /* BCBadgeLevel.m */; };
+		94B0456215C5DBA700B9650C /* BCBadgeDefinitions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B0456115C5DBA700B9650C /* BCBadgeDefinitions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		944E4FE215C347D900A76B1D /* socialite-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "socialite-4.png"; sourceTree = "<group>"; };
 		9492C2F415C3599A00739FA2 /* BCBadgeLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadgeLevel.h; sourceTree = "<group>"; };
 		9492C2F515C3599A00739FA2 /* BCBadgeLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadgeLevel.m; sourceTree = "<group>"; };
+		94B0456115C5DBA700B9650C /* BCBadgeDefinitions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BCBadgeDefinitions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				9492C2F415C3599A00739FA2 /* BCBadgeLevel.h */,
 				9492C2F515C3599A00739FA2 /* BCBadgeLevel.m */,
 				941299C515C344BD0031C7F4 /* Supporting Files */,
+				94B0456115C5DBA700B9650C /* BCBadgeDefinitions.plist */,
 			);
 			path = BadgeCenterDemo;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				944E500415C347D900A76B1D /* socialite-2.png in Resources */,
 				944E500515C347D900A76B1D /* socialite-3.png in Resources */,
 				944E500615C347D900A76B1D /* socialite-4.png in Resources */,
+				94B0456215C5DBA700B9650C /* BCBadgeDefinitions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
