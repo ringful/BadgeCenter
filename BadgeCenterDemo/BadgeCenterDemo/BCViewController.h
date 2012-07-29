@@ -12,5 +12,8 @@
 
 //@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UIView  *badgesView;
+@property (weak, nonatomic) IBOutlet UILabel *header;
+@property (weak, nonatomic) IBOutlet UILabel *subtitle;
 
 @end

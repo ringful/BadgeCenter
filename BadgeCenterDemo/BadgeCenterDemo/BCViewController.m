@@ -19,36 +19,58 @@ int const kBadgeViewHeight = 100;
 @end
 
 @implementation BCViewController
+@synthesize badgesView = _badgesView;
+@synthesize header = _header;
+@synthesize subtitle = _subtitle;
 
 - (void)viewDidLoad
 {    
     [super viewDidLoad];
-
-    NSLog(@"view is %@", self.view);
     
-    self.badges = [NSArray arrayWithObjects:[BCBadgeLevel badgeWithImage:@"officialuser-3"],
-                   [BCBadgeLevel badgeWithImage:@"scanmaster-2"],
-                   [BCBadgeLevel badgeWithImage:@"reporter-1"],
-                   [BCBadgeLevel badgeWithImage:@"officialuser-1"],
-                   [BCBadgeLevel badgeWithImage:@"playitsafe-1"],
-                   [BCBadgeLevel badgeWithImage:@"socialite-3"],
-                   [BCBadgeLevel badgeWithImage:@"applover-2"],
+    self.header.text = @"Badge Collection";
+    self.subtitle.text = @"You have earned X of Y badges";
+    
+    self.badges = [NSArray arrayWithObjects:
+                   [BCBadgeLevel badgeWithImage:@"officialuser-3"
+                                        andName:@"Official User"],
+                   [BCBadgeLevel badgeWithImage:@"scanmaster-2"
+                                        andName:@"Scan Master"],
+                   [BCBadgeLevel badgeWithImage:@"reporter-1"
+                                        andName:@"Reporter"],
+                   [BCBadgeLevel badgeWithImage:@"officialuser-1"
+                                        andName:@"Official User"],
+                   [BCBadgeLevel badgeWithImage:@"playitsafe-1"
+                                        andName:@"Play it Safe"],
+                   [BCBadgeLevel badgeWithImage:@"socialite-3"
+                                        andName:@"Socialite"],
+                   [BCBadgeLevel badgeWithImage:@"applover-2"
+                                        andName:@"App Lover"],
 
                    nil];
     
-    [self renderBadges];
-
+    [self renderBadgesInto:self.badgesView];
 }
 
-- (void) renderBadges {
+- (void) renderBadgesInto:(UIView *) parentView {
     for (int pos = 0; pos < [self numberOfBadges]; pos++) {
         BCBadgeLevel* level = [self badgeForPosition:pos];
-                
+        
+        UIView* badgeView = [[UIView alloc] initWithFrame:[self positionForBadgeNumber:pos]];
+        
         UIImage* image = [self imageForBadgeLevel:level];
         UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = [self positionForBadgeNumber:pos];
+        imageView.frame = CGRectMake(10, 0, 80, 80);
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,80,100,20)];
+        label.text = level.badgeName;
+        label.font = [UIFont systemFontOfSize:14];
+        label.textAlignment = UITextAlignmentCenter;
+        label.textColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor clearColor];
         
-        [self.view addSubview:imageView];        
+        [badgeView addSubview:imageView];
+        [badgeView addSubview:label];
+        
+        [parentView addSubview:badgeView];
     }
 }
                    
@@ -66,7 +88,7 @@ int const kBadgeViewHeight = 100;
     int col = pos % kBadgesPerRow;
     
     // a few more hacks until we create a real view
-    return CGRectMake(kBadgeViewWidth*col+10, kBadgeViewHeight*row, kBadgeViewWidth-20, kBadgeViewHeight-20);
+    return CGRectMake(kBadgeViewWidth*col, kBadgeViewHeight*row, kBadgeViewWidth, kBadgeViewHeight);
 }
 
 - (UIImage*) imageForBadgeLevel:(BCBadgeLevel*) badgeLevel {
@@ -75,6 +97,9 @@ int const kBadgeViewHeight = 100;
 
 - (void)viewDidUnload
 {
+    [self setBadgesView:nil];
+    [self setTitle:nil];
+    [self setSubtitle:nil];
     [super viewDidUnload];
 }
 

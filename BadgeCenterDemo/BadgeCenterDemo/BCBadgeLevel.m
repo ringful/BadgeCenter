@@ -10,13 +10,13 @@
 
 @implementation BCBadgeLevel
 
-+(BCBadgeLevel*) badgeWithImage:(NSString*) image {
++(BCBadgeLevel*) badgeWithImage:(NSString*) image andName:(NSString*) name{
     BCBadgeLevel* badge = [[BCBadgeLevel alloc] init];
     badge.badgeImage = image;
+    badge.badgeName = name;
     
     return badge;
 }
-
 
 @end
 
