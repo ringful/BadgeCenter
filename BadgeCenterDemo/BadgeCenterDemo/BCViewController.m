@@ -132,11 +132,12 @@ static const NSString* kBCOptionBackground = @"background";
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+//    } else {
+//        return YES;
+//    }
+    return NO;
 }
 
 @end
