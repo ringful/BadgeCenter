@@ -15,7 +15,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *subtitle;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 
-@property (strong,nonatomic) NSDictionary *badgeOptions;
-
-
 @end

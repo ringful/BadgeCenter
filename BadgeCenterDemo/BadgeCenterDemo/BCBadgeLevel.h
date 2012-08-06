@@ -12,7 +12,6 @@
 
 +(BCBadgeLevel*) badgeWithImage:(NSString*) image andName:(NSString*) name;
 
-
 @property (nonatomic, copy) NSString *badgeImage;
 @property (nonatomic, copy) NSString *badgeName;
 

@@ -2,6 +2,124 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>metrics</key>
+	<array>
+		<string>reported</string>
+		<string>user</string>
+		<string>daysused</string>
+		<string>appused</string>
+		<string>safe</string>
+		<string>scan</string>
+		<string>social</string>
+	</array>
+	<key>badges</key>
+	<array>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>officialuser</string>
+			<key>name</key>
+			<string>Official User</string>
+			<key>metric</key>
+			<string>user</string>
+		</dict>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>7daystretch</string>
+			<key>name</key>
+			<string>7 Day Stretcch</string>
+			<key>metric</key>
+			<string>daysused</string>
+		</dict>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>applover</string>
+			<key>name</key>
+			<string>App Lover</string>
+			<key>metric</key>
+			<string>appused</string>
+		</dict>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>playitsafe</string>
+			<key>name</key>
+			<string>Play it safe!</string>
+			<key>metric</key>
+			<string>safe</string>
+		</dict>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>reporter</string>
+			<key>name</key>
+			<string>Reporter</string>
+			<key>metric</key>
+			<real>0</real>
+		</dict>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>scanmaster</string>
+			<key>name</key>
+			<string>The Scan Master</string>
+			<key>metric</key>
+			<string>scan</string>
+		</dict>
+		<dict>
+			<key>levels</key>
+			<array>
+				<integer>0</integer>
+				<integer>5</integer>
+				<integer>25</integer>
+				<integer>50</integer>
+			</array>
+			<key>id</key>
+			<string>socialite</string>
+			<key>name</key>
+			<string>The Socialite</string>
+			<key>metric</key>
+			<string>social</string>
+		</dict>
+	</array>
 	<key>background</key>
 	<string>metal-2.jpg</string>
 </dict>

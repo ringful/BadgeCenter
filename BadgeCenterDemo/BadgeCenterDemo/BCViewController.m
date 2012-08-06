@@ -8,58 +8,51 @@
 
 #import "BCViewController.h"
 #import "BCBadgeLevel.h"
+#import "BCBadgeManager.h"
+#import "BCMetric.h"
+#import "BCBadge.h"
+
 
 int const kBadgesPerRow    = 3;
 int const kBadgeViewWidth  = 100;
 int const kBadgeViewHeight = 100;
 
 @interface BCViewController ()
+
 @property (nonatomic, strong) NSArray* badges;
+@property (nonatomic, strong) BCBadgeManager* badgeManager;
 
 @end
 
 @implementation BCViewController
-@synthesize backgroundView = _backgroundView;
-@synthesize badgesView = _badgesView;
-@synthesize header = _header;
-@synthesize subtitle = _subtitle;
-
-static const NSString* kBCOptionBackground = @"background";
 
 - (void)viewDidLoad
 {    
     [super viewDidLoad];
-    [self loadPreferences];
+    self.badgeManager = [[BCBadgeManager alloc] init];
     
     [self setBackground];
+
+    for (BCMetric* metric in [_badgeManager metrics]) {
+        NSLog(@"METRIC %@", metric.name);
+    }
+    
+    for (BCBadge* badge in [_badgeManager badgeDefinitions]) {
+        NSLog(@"BADGE %@", badge.name);
+    }
     
     self.header.text = @"Badge Collection";
     self.subtitle.text = @"You have earned X of Y badges";
     
-    self.badges = [NSArray arrayWithObjects:
-                   [BCBadgeLevel badgeWithImage:@"officialuser-3"
-                                        andName:@"Official User"],
-                   [BCBadgeLevel badgeWithImage:@"scanmaster-2"
-                                        andName:@"Scan Master"],
-                   [BCBadgeLevel badgeWithImage:@"reporter-1"
-                                        andName:@"Reporter"],
-                   [BCBadgeLevel badgeWithImage:@"officialuser-1"
-                                        andName:@"Official User"],
-                   [BCBadgeLevel badgeWithImage:@"playitsafe-1"
-                                        andName:@"Play it Safe"],
-                   [BCBadgeLevel badgeWithImage:@"socialite-3"
-                                        andName:@"Socialite"],
-                   [BCBadgeLevel badgeWithImage:@"applover-2"
-                                        andName:@"App Lover"],
-
-                   nil];
     
+    
+    self.badges = [self createBadgeList];
     
     [self renderBadgesInto:self.badgesView];
 }
 
 -(void) setBackground {
-    NSString* imageName = [self.badgeOptions objectForKey:kBCOptionBackground];
+    NSString * imageName = [_badgeManager backgroundImageName];
     if (imageName) {
         UIImage *image = [UIImage imageNamed:imageName];
         if (image) {
@@ -68,11 +61,15 @@ static const NSString* kBCOptionBackground = @"background";
     }
 }
 
--(void) loadPreferences {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"BCBadgeDefinitions" ofType:@"plist"];
-    if (path) {
-        self.badgeOptions = [[NSMutableDictionary alloc]initWithContentsOfFile:path];
+-(NSArray*) createBadgeList {
+    NSMutableArray *badges = [NSMutableArray array];
+    
+    
+    for (BCBadge* badge in [_badgeManager badgeDefinitions]) {
+        [badges addObject:[badge badgeLevelForValue:arc4random()%50]];
     }
+
+    return badges;
 }
 
 - (void) renderBadgesInto:(UIView *) parentView {
@@ -124,7 +121,6 @@ static const NSString* kBCOptionBackground = @"background";
     [self setBadgesView:nil];
     [self setTitle:nil];
     [self setSubtitle:nil];
-    [self setBadgeOptions:nil];
     
     [self setBackgroundView:nil];
     [super viewDidUnload];
@@ -132,12 +128,7 @@ static const NSString* kBCOptionBackground = @"background";
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-//    } else {
-//        return YES;
-//    }
-    return NO;
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 @end
