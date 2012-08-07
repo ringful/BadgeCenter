@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Ringful. All rights reserved.
 //
 
+#import <Twitter/Twitter.h>
+
 #import "BCViewController.h"
 #import "BCBadgeLevel.h"
 #import "BCBadgeManager.h"
@@ -45,7 +47,6 @@ int const kBadgeViewHeight = 100;
     self.subtitle.text = @"You have earned X of Y badges";
     
     
-    
     self.badges = [self createBadgeList];
     
     [self renderBadgesInto:self.badgesView];
@@ -79,8 +80,15 @@ int const kBadgeViewHeight = 100;
         UIView* badgeView = [[UIView alloc] initWithFrame:[self positionForBadgeNumber:pos]];
         
         UIImage* image = [self imageForBadgeLevel:level];
-        UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = CGRectMake(10, 0, 80, 80);
+        UIButton* imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        imageButton.frame = CGRectMake(10, 0, 80, 80);
+        imageButton.tag = pos;        
+        [imageButton setImage:image forState:UIControlStateNormal];
+        [imageButton addTarget:self action:@selector(badgeClicked:)
+           forControlEvents:UIControlEventTouchUpInside];
+
+        //UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
+        //imageView.frame = CGRectMake(10, 0, 80, 80);
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,80,100,20)];
         label.text = level.badgeName;
         label.font = [UIFont systemFontOfSize:14];
@@ -88,7 +96,8 @@ int const kBadgeViewHeight = 100;
         label.textColor = [UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
         
-        [badgeView addSubview:imageView];
+        //[badgeView addSubview:imageView];
+        [badgeView addSubview:imageButton];
         [badgeView addSubview:label];
         
         [parentView addSubview:badgeView];
@@ -124,6 +133,21 @@ int const kBadgeViewHeight = 100;
     
     [self setBackgroundView:nil];
     [super viewDidUnload];
+}
+
+- (void)badgeClicked:(UIButton*) sender {
+    BCBadgeLevel* badge = [_badges objectAtIndex:[sender tag]];
+    
+    TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
+
+    [tweetSheet setInitialText:[NSString stringWithFormat:@"I just earned the %@ badge in BadgeCenterDemo!", badge.badgeName]];
+    [tweetSheet addImage:[UIImage imageNamed:badge.badgeImage]];
+    
+    tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result){
+        [self dismissModalViewControllerAnimated:YES];
+    };
+    
+    [self presentModalViewController:tweetSheet animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

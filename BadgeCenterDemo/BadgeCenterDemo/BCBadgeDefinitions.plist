@@ -40,7 +40,7 @@
 			<key>id</key>
 			<string>7daystretch</string>
 			<key>name</key>
-			<string>7 Day Stretcch</string>
+			<string>7 Day Stretch</string>
 			<key>metric</key>
 			<string>daysused</string>
 		</dict>
@@ -100,7 +100,7 @@
 			<key>id</key>
 			<string>scanmaster</string>
 			<key>name</key>
-			<string>The Scan Master</string>
+			<string>Scan Master</string>
 			<key>metric</key>
 			<string>scan</string>
 		</dict>

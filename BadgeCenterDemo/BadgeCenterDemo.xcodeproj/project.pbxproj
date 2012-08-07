@@ -144,6 +144,7 @@
 		944E4FE815C347D900A76B1D /* metal-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 944E4FC315C347D800A76B1D /* metal-1.jpg */; };
 		944E4FE915C347D900A76B1D /* metal-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 944E4FC415C347D800A76B1D /* metal-2.jpg */; };
 		944E4FEA15C347D900A76B1D /* metal-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 944E4FC515C347D800A76B1D /* metal-3.jpg */; };
+		945F26B215D0B09300754A35 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945F26B115D0B09300754A35 /* Twitter.framework */; };
 		9492C2F615C3599A00739FA2 /* BCBadgeLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492C2F515C3599A00739FA2 /* BCBadgeLevel.m */; };
 		94B0456215C5DBA700B9650C /* BCBadgeDefinitions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B0456115C5DBA700B9650C /* BCBadgeDefinitions.plist */; };
 /* End PBXBuildFile section */
@@ -249,6 +250,7 @@
 		944E4FC315C347D800A76B1D /* metal-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "metal-1.jpg"; sourceTree = "<group>"; };
 		944E4FC415C347D800A76B1D /* metal-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "metal-2.jpg"; sourceTree = "<group>"; };
 		944E4FC515C347D800A76B1D /* metal-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "metal-3.jpg"; sourceTree = "<group>"; };
+		945F26B115D0B09300754A35 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9492C2F415C3599A00739FA2 /* BCBadgeLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadgeLevel.h; sourceTree = "<group>"; };
 		9492C2F515C3599A00739FA2 /* BCBadgeLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadgeLevel.m; sourceTree = "<group>"; };
 		94B0456115C5DBA700B9650C /* BCBadgeDefinitions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BCBadgeDefinitions.plist; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945F26B215D0B09300754A35 /* Twitter.framework in Frameworks */,
 				941299BF15C344BD0031C7F4 /* UIKit.framework in Frameworks */,
 				941299C115C344BD0031C7F4 /* Foundation.framework in Frameworks */,
 				941299C315C344BD0031C7F4 /* CoreGraphics.framework in Frameworks */,
@@ -301,6 +304,7 @@
 		941299BD15C344BD0031C7F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				945F26B115D0B09300754A35 /* Twitter.framework */,
 				941299BE15C344BD0031C7F4 /* UIKit.framework */,
 				941299C015C344BD0031C7F4 /* Foundation.framework */,
 				941299C215C344BD0031C7F4 /* CoreGraphics.framework */,
