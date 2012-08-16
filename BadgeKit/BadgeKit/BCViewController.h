@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *subtitle;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 
+
+- (IBAction)dismissBadgeView:(id)sender;
 @end

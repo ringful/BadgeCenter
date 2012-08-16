@@ -10,6 +10,9 @@
 
 @interface BCBadgeManager : NSObject
 
++ (BCBadgeManager*) sharedManager;
+-(UIViewController*) badgeViewController;
+
 - (NSString*) backgroundImageName;
 
 - (NSArray*) metricDefinitions;

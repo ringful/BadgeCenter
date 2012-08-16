@@ -1,14 +1,14 @@
 //
-//  BadgeCenterDemoTests.m
-//  BadgeCenterDemoTests
+//  BadgeKitTests.m
+//  BadgeKitTests
 //
 //  Created by Norman Richards on 8/16/12.
 //  Copyright (c) 2012 Ringful. All rights reserved.
 //
 
-#import "BadgeCenterDemoTests.h"
+#import "BadgeKitTests.h"
 
-@implementation BadgeCenterDemoTests
+@implementation BadgeKitTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in BadgeCenterDemoTests");
+    STFail(@"Unit tests are not implemented yet in BadgeKitTests");
 }
 
 @end

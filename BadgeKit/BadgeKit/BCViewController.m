@@ -31,21 +31,12 @@ int const kBadgeViewHeight = 100;
 - (void)viewDidLoad
 {    
     [super viewDidLoad];
-    self.badgeManager = [[BCBadgeManager alloc] init];
+    self.badgeManager = [BCBadgeManager sharedManager];
     
     [self setBackground];
-//
-//    for (BCMetric* metric in [_badgeManager metricDefinitions]) {
-//        NSLog(@"METRIC %@", metric.name);
-//    }
-//    
-//    for (BCBadge* badge in [_badgeManager badgeDefinitions]) {
-//        NSLog(@"BADGE %@", badge.name);
-//    }
-//    
+
     self.header.text   = @"Badge Collection";
     self.subtitle.text = @"You have earned X of Y badges";
-    
     
     self.badges = [self createBadgeList];
 
@@ -150,4 +141,7 @@ int const kBadgeViewHeight = 100;
     return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
+- (IBAction)dismissBadgeView:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 @end

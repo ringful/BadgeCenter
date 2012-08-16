@@ -9,6 +9,7 @@
 #import "BCBadgeManager.h"
 #import "BCMetric.h"
 #import "BCBadge.h"
+#import "BCViewController.m"
 
 
 static const NSString* kBCOptionBackground = @"background";
@@ -29,6 +30,15 @@ static NSString* kBCPListBadges  = @"BCBadges.plist";
 
 
 @implementation BCBadgeManager
+
+static BCBadgeManager *sharedInstance = nil;
+
++ (BCBadgeManager*) sharedManager {
+    if (sharedInstance == nil) {
+        sharedInstance = [[super alloc] init];
+    }
+    return sharedInstance;
+}
 
 - (id)init
 {
@@ -206,6 +216,15 @@ static NSString* kBCPListBadges  = @"BCBadges.plist";
 -(void) badgeDidLevelUp: (NSString*) name {
     // call a delegate perhaps
     NSLog(@"baged %@ level up", name);
+}
+
+
+#pragma mark UI
+
+-(UIViewController*) badgeViewController {
+    BCViewController* controller = [[BCViewController alloc] initWithNibName:@"BCBadgeView" bundle:nil];
+    NSLog(@"got view controller %@", controller);
+    return controller;
 }
 
 @end
