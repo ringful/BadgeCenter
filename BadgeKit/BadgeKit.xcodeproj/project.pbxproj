@@ -77,7 +77,6 @@
 		94D8229315DD52CD0096CD02 /* BCMetric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMetric.m; sourceTree = "<group>"; };
 		94D8229415DD52CD0096CD02 /* BCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCViewController.h; sourceTree = "<group>"; };
 		94D8229515DD52CD0096CD02 /* BCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
-		94D822AB15DD5BBA0096CD02 /* BCBadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCBadgeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +105,6 @@
 		94D820F815DD4EE10096CD02 = {
 			isa = PBXGroup;
 			children = (
-				94D822AB15DD5BBA0096CD02 /* BCBadgeView.xib */,
 				94D8210815DD4EE10096CD02 /* BadgeKit */,
 				94D8211D15DD4EE10096CD02 /* BadgeKitTests */,
 				94D8210515DD4EE10096CD02 /* Frameworks */,

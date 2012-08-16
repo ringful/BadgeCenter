@@ -206,7 +206,6 @@ static BCBadgeManager *sharedInstance = nil;
     return value;
 }
 
-
 -(void) metricDidChange:(NSString*) name to:(int) value {
     NSLog(@"metric %@ is now %d", name, value);
     [self saveMetrics];
