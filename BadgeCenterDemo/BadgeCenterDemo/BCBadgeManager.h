@@ -11,7 +11,12 @@
 @interface BCBadgeManager : NSObject
 
 - (NSString*) backgroundImageName;
-- (NSArray*) metrics;
+
+- (NSArray*) metricDefinitions;
 - (NSArray*) badgeDefinitions;
+- (NSArray*) currentBadges;
+
+- (NSInteger) incrementMetric:(NSString*) metricName by:(NSInteger) increment;
+- (NSInteger) setMetric:(NSString*) metricName to:(NSInteger) value;
 
 @end

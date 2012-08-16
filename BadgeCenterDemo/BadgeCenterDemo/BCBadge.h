@@ -18,6 +18,6 @@
 
 - (id)initFromDictionary: (NSDictionary*) dict;
 
-// for testing
-- (BCBadgeLevel*) badgeLevelForValue:(int) value;
+- (int) levelForValue:(int) value;
+- (BCBadgeLevel*) badgeLevel:(int) value;
 @end

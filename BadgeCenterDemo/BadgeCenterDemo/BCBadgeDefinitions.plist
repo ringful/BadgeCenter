@@ -87,7 +87,7 @@
 			<key>name</key>
 			<string>Reporter</string>
 			<key>metric</key>
-			<real>0</real>
+			<string>reported</string>
 		</dict>
 		<dict>
 			<key>levels</key>

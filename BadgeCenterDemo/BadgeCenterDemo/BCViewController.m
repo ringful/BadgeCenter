@@ -34,21 +34,23 @@ int const kBadgeViewHeight = 100;
     self.badgeManager = [[BCBadgeManager alloc] init];
     
     [self setBackground];
-
-    for (BCMetric* metric in [_badgeManager metrics]) {
-        NSLog(@"METRIC %@", metric.name);
-    }
-    
-    for (BCBadge* badge in [_badgeManager badgeDefinitions]) {
-        NSLog(@"BADGE %@", badge.name);
-    }
-    
-    self.header.text = @"Badge Collection";
+//
+//    for (BCMetric* metric in [_badgeManager metricDefinitions]) {
+//        NSLog(@"METRIC %@", metric.name);
+//    }
+//    
+//    for (BCBadge* badge in [_badgeManager badgeDefinitions]) {
+//        NSLog(@"BADGE %@", badge.name);
+//    }
+//    
+    self.header.text   = @"Badge Collection";
     self.subtitle.text = @"You have earned X of Y badges";
     
     
     self.badges = [self createBadgeList];
-    
+
+    NSLog(@"testing metric is now %d", [_badgeManager incrementMetric:@"testing" by:1]);
+
     [self renderBadgesInto:self.badgesView];
 }
 
@@ -63,14 +65,7 @@ int const kBadgeViewHeight = 100;
 }
 
 -(NSArray*) createBadgeList {
-    NSMutableArray *badges = [NSMutableArray array];
-    
-    
-    for (BCBadge* badge in [_badgeManager badgeDefinitions]) {
-        [badges addObject:[badge badgeLevelForValue:arc4random()%50]];
-    }
-
-    return badges;
+    return [_badgeManager currentBadges];
 }
 
 - (void) renderBadgesInto:(UIView *) parentView {

@@ -28,7 +28,7 @@
     
     for (int i =0; i<[self.levels count]; i++) {
         NSNumber *number = [self.levels objectAtIndex:i];
-        NSLog(@"intValue %d", [number intValue]);
+        //NSLog(@"intValue %d", [number intValue]);
         if (value >[number intValue]) {
             level++;
         }        
@@ -38,9 +38,8 @@
     return level;
 }
 
-- (BCBadgeLevel*) badgeLevelForValue:(int) value {
-    NSString* imageName = [NSString stringWithFormat:@"%@-%d", self.name, [self levelForValue:value]];
-    NSLog(@"badge %@ val=%d => %@", self.displayName, value, imageName);
+- (BCBadgeLevel*) badgeLevel:(int) level {
+    NSString* imageName = [NSString stringWithFormat:@"%@-%d", self.name, level];
     
     return [BCBadgeLevel badgeWithImage:imageName
                                 andName:self.displayName];
