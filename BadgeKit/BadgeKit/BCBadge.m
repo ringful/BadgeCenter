@@ -29,7 +29,7 @@
     for (int i =0; i<[self.levels count]; i++) {
         NSNumber *number = [self.levels objectAtIndex:i];
         //NSLog(@"intValue %d", [number intValue]);
-        if (value >[number intValue]) {
+        if (value >=[number intValue]) {
             level++;
         }        
     }
