@@ -10,10 +10,13 @@
 
 @interface BCBadgeLevel : NSObject
 
-+(BCBadgeLevel*) badgeWithImage:(NSString*) image andName:(NSString*) name;
++(BCBadgeLevel*) badgeWithImage:(NSString*) image
+                          level:(int) level
+                        andName:(NSString*) name;
 
 @property (nonatomic, copy) NSString *badgeImage;
 @property (nonatomic, copy) NSString *badgeName;
+@property (nonatomic) int level;
 
 
 @end

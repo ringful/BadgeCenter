@@ -36,7 +36,7 @@ int const kBadgeViewHeight = 100;
     [self setBackground];
 
     self.header.text   = @"Badge Collection";
-    self.subtitle.text = @"You have earned X of Y badges";
+    [self setBadgeCount];
     
     self.badges = [self createBadgeList];
 
@@ -53,6 +53,24 @@ int const kBadgeViewHeight = 100;
             self.backgroundView.image = image;
         }
     }
+}
+
+-(void) setBadgeCount {
+    NSArray* badgeLevels =[_badgeManager currentBadges];
+    
+    int earned = 0;
+    for (BCBadgeLevel* badgeLevel in badgeLevels) {
+        if (badgeLevel.level > 1) {
+            earned++;
+        }
+    }
+    
+
+    
+    self.subtitle.text = [NSString stringWithFormat:@"You have earned %d of %d badges",
+                          earned,
+                          [badgeLevels count]];
+
 }
 
 -(NSArray*) createBadgeList {

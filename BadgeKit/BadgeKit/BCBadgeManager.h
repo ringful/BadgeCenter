@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString* const kBCNotificationLevelUp;
+extern NSString* const kBCNotificationMetricChanged;
+
 @interface BCBadgeManager : NSObject
 
 + (BCBadgeManager*) sharedManager;
 -(UIViewController*) badgeViewController;
 
-- (NSString*) backgroundImageName;
+-(NSString*) backgroundImageName;
 
-- (NSArray*) metricDefinitions;
-- (NSArray*) badgeDefinitions;
-- (NSArray*) currentBadges;
+-(NSArray*) metricDefinitions;
+-(NSArray*) badgeDefinitions;
+-(NSArray*) currentBadges;
 
-- (NSInteger) incrementMetric:(NSString*) metricName by:(NSInteger) increment;
-- (NSInteger) setMetric:(NSString*) metricName to:(NSInteger) value;
+-(NSInteger) metric:(NSString*) metricName;
+-(NSInteger) incrementMetric:(NSString*) metricName by:(NSInteger) increment;
+-(NSInteger) setMetric:(NSString*) metricName to:(NSInteger) value;
 
 @end

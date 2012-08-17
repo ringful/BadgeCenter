@@ -16,10 +16,9 @@
 
 @implementation BCDemoViewController
 
-
-static const int TITLE_BASE=301;
+static const int STEP_BASE  = 101;
 static const int COUNT_BASE = 201;
-static const int STEP_BASE = 101;
+static const int TITLE_BASE = 301;
 
 - (void)viewDidLoad
 {
@@ -45,6 +44,20 @@ static const int STEP_BASE = 101;
         [[self count:i] setText:[self countAsString:current]];
         [[self title:i] setText:metricName];        
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(levelUp:)
+                                                 name:kBCNotificationLevelUp
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(metricChanged:)
+                                                 name:kBCNotificationMetricChanged
+                                               object:nil];
+
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(UIStepper*) stepper:(int) i {
@@ -89,10 +102,33 @@ static const int STEP_BASE = 101;
     int value = (int) sender.value;
     
     [[BCBadgeManager sharedManager] setMetric:[_metricNames objectAtIndex:metricNumber] to:value];
-
-    // shouldn't update.  we should have a delegate on manager or event for metric change that
-    // we wait for....
-    UILabel* count = (UILabel*) [self.view viewWithTag:COUNT_BASE+metricNumber];
-    count.text = [self countAsString: value];
 }
+
+-(void) metricChanged:(NSNotification*) notification {
+    NSDictionary* info = [notification userInfo];
+    NSLog(@"Metric changed %@", info);
+    
+    NSString* metricName = [info objectForKey:@"metric"];
+    NSNumber* value      = [info objectForKey:@"value"];
+    
+    int metricNumber = [_metricNames indexOfObject:metricName];
+    if (metricNumber != NSNotFound) {
+        [[self stepper:metricNumber] setValue:[value intValue]];
+        [[self count:metricNumber] setText:[self countAsString:[value intValue]]];        
+    }    
+}
+
+-(void) levelUp:(NSNotification*) notification{
+    NSDictionary* info = [notification userInfo];
+    NSLog(@"LEVEL UP! %@", info);
+
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Level Up "
+                                                        message:[NSString stringWithFormat:@"badge %@", [info objectForKey:@"badge"]]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 @end

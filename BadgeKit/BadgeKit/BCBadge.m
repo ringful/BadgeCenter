@@ -42,6 +42,7 @@
     NSString* imageName = [NSString stringWithFormat:@"%@-%d", self.name, level];
     
     return [BCBadgeLevel badgeWithImage:imageName
+                                  level:level
                                 andName:self.displayName];
 }
 

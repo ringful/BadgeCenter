@@ -11,6 +11,8 @@
 #import "BCBadge.h"
 #import "BCViewController.m"
 
+NSString* const kBCNotificationLevelUp = @"BCLevelUp";
+NSString* const kBCNotificationMetricChanged = @"BCMetricChanged";
 
 static const NSString* kBCOptionBackground = @"background";
 static const NSString* kBCOptionMetrics    = @"metrics";
@@ -206,16 +208,31 @@ static BCBadgeManager *sharedInstance = nil;
     return value;
 }
 
--(void) metricDidChange:(NSString*) name to:(int) value {
+-(void) metricDidChange:(NSString*) name
+                     to:(int) value {
     NSLog(@"metric %@ is now %d", name, value);
     [self saveMetrics];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kBCNotificationMetricChanged
+                                                        object:nil
+                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                name,  @"metric",
+                                                                [NSNumber numberWithInt:value], @"value",
+                                                                nil]];
     [self checkBadges];
 }
 
 -(void) badgeDidLevelUp: (NSString*) name {
     // call a delegate perhaps
     NSLog(@"baged %@ level up", name);
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kBCNotificationLevelUp
+                                                        object:nil
+                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                name,  @"badge",
+                                                                nil]];
 }
+
 
 
 #pragma mark UI
