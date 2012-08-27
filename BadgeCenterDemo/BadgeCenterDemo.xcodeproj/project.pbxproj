@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9400CB3315EBCAFD0065BE49 /* libBadgeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9400CB3215EBCAFD0065BE49 /* libBadgeKit.a */; };
 		94D8213E15DD4F300096CD02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8213D15DD4F300096CD02 /* UIKit.framework */; };
 		94D8214015DD4F300096CD02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8213F15DD4F300096CD02 /* Foundation.framework */; };
 		94D8214215DD4F300096CD02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8214115DD4F300096CD02 /* CoreGraphics.framework */; };
@@ -84,7 +85,6 @@
 		94D8228715DD4FEE0096CD02 /* socialite-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D8224715DD4FEE0096CD02 /* socialite-4.png */; };
 		94D8228815DD4FEE0096CD02 /* socialite-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D8224815DD4FEE0096CD02 /* socialite-4@2x.png */; };
 		94D8228B15DD52230096CD02 /* BCBadgeDefinitions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D8228A15DD52230096CD02 /* BCBadgeDefinitions.plist */; };
-		94D822A315DD55B10096CD02 /* libBadgeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D822A215DD55B10096CD02 /* libBadgeKit.a */; };
 		94D822AD15DD5E780096CD02 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D822AC15DD5E780096CD02 /* Twitter.framework */; };
 		94D822F615DD66AF0096CD02 /* BCDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D822F515DD66AF0096CD02 /* BCDemoViewController.xib */; };
 		94D822FD15DD6DD40096CD02 /* BCBadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D822FC15DD6DD40096CD02 /* BCBadgeView.xib */; };
@@ -101,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9400CB3215EBCAFD0065BE49 /* libBadgeKit.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libBadgeKit.a; path = "../BadgeKit/build/Release-iphoneos/libBadgeKit.a"; sourceTree = "<group>"; };
 		94D8213915DD4F300096CD02 /* BadgeCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgeCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8213D15DD4F300096CD02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94D8213F15DD4F300096CD02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,7 +185,6 @@
 		94D8224715DD4FEE0096CD02 /* socialite-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "socialite-4.png"; sourceTree = "<group>"; };
 		94D8224815DD4FEE0096CD02 /* socialite-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "socialite-4@2x.png"; sourceTree = "<group>"; };
 		94D8228A15DD52230096CD02 /* BCBadgeDefinitions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BCBadgeDefinitions.plist; sourceTree = "<group>"; };
-		94D822A215DD55B10096CD02 /* libBadgeKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBadgeKit.a; path = "../../../Library/Developer/Xcode/DerivedData/BadgeCenter-chldldjfbaguprdwgzidhequcrdt/Build/Products/Debug-iphoneos/libBadgeKit.a"; sourceTree = "<group>"; };
 		94D822AC15DD5E780096CD02 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		94D822F515DD66AF0096CD02 /* BCDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCDemoViewController.xib; sourceTree = "<group>"; };
 		94D822FC15DD6DD40096CD02 /* BCBadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCBadgeView.xib; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9400CB3315EBCAFD0065BE49 /* libBadgeKit.a in Frameworks */,
 				94D822AD15DD5E780096CD02 /* Twitter.framework in Frameworks */,
-				94D822A315DD55B10096CD02 /* libBadgeKit.a in Frameworks */,
 				94D8213E15DD4F300096CD02 /* UIKit.framework in Frameworks */,
 				94D8214015DD4F300096CD02 /* Foundation.framework in Frameworks */,
 				94D8214215DD4F300096CD02 /* CoreGraphics.framework in Frameworks */,
@@ -219,8 +219,8 @@
 		94D8212E15DD4F300096CD02 = {
 			isa = PBXGroup;
 			children = (
+				9400CB3215EBCAFD0065BE49 /* libBadgeKit.a */,
 				94D822AC15DD5E780096CD02 /* Twitter.framework */,
-				94D822A215DD55B10096CD02 /* libBadgeKit.a */,
 				94D8228915DD51EA0096CD02 /* badges */,
 				94D8214315DD4F300096CD02 /* BadgeCenterDemo */,
 				94D8216415DD4F300096CD02 /* BadgeCenterDemoTests */,
@@ -664,10 +664,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgeCenterDemo/BadgeCenterDemo-Prefix.pch";
 				INFOPLIST_FILE = "BadgeCenterDemo/BadgeCenterDemo-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/BadgeCenter-chldldjfbaguprdwgzidhequcrdt/Build/Products/Debug-iphoneos\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -680,10 +677,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgeCenterDemo/BadgeCenterDemo-Prefix.pch";
 				INFOPLIST_FILE = "BadgeCenterDemo/BadgeCenterDemo-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/BadgeCenter-chldldjfbaguprdwgzidhequcrdt/Build/Products/Debug-iphoneos\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
