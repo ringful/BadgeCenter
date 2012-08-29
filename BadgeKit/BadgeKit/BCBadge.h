@@ -1,23 +1,24 @@
 //
-//  BCBade.h
+//  BCBadgeLevel.h
 //  BadgeCenterDemo
 //
-//  Created by Norman Richards on 8/5/12.
+//  Created by Norman Richards on 7/27/12.
 //  Copyright (c) 2012 Ringful. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "BCBadgeLevel.h"
 
 @interface BCBadge : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *displayName;
-@property (nonatomic, strong) NSString *metricName;
-@property (nonatomic, strong) NSArray *levels;
++(BCBadge*) badgeWithImage:(NSString*) image
+                          level:(int) level
+                           name:(NSString*) name
+                        message:(NSString*) message;
 
-- (id)initFromDictionary: (NSDictionary*) dict;
+@property (nonatomic, copy) NSString *badgeImage;
+@property (nonatomic, copy) NSString *badgeName;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic) int level;
 
-- (int) levelForValue:(int) value;
-- (BCBadgeLevel*) badgeLevel:(int) value;
+
 @end

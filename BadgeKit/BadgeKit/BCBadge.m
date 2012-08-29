@@ -1,8 +1,8 @@
 //
-//  BCBade.m
+//  BCBadgeLevel.m
 //  BadgeCenterDemo
 //
-//  Created by Norman Richards on 8/5/12.
+//  Created by Norman Richards on 7/27/12.
 //  Copyright (c) 2012 Ringful. All rights reserved.
 //
 
@@ -10,41 +10,19 @@
 
 @implementation BCBadge
 
-- (id)initFromDictionary: (NSDictionary*) dict
++(BCBadge*) badgeWithImage:(NSString*) image
+                          level:(int) level
+                           name:(NSString*) name
+                        message:(NSString*)message
 {
-    self = [super init];
-    if (self) {
-        self.name = [dict objectForKey:@"id"];
-        self.displayName = [dict objectForKey:@"name"];
-        self.metricName = [dict objectForKey:@"metric"];        
-        self.levels = [dict objectForKey:@"levels"];
-    }
-    return self;
-}
-
-// quick hack
--(int) levelForValue:(int) value {
-    int level = 0;
+    BCBadge* badge = [[BCBadge alloc] init];
+    badge.badgeImage = image;
+    badge.badgeName = name;
+    badge.message = message;
+    badge.level = level;
     
-    for (int i =0; i<[self.levels count]; i++) {
-        NSNumber *number = [self.levels objectAtIndex:i];
-        //NSLog(@"intValue %d", [number intValue]);
-        if (value >=[number intValue]) {
-            level++;
-        }        
-    }
-
-
-    return level;
+    return badge;
 }
-
-- (BCBadgeLevel*) badgeLevel:(int) level {
-    NSString* imageName = [NSString stringWithFormat:@"%@-%d", self.name, level];
-    
-    return [BCBadgeLevel badgeWithImage:imageName
-                                  level:level
-                                andName:self.displayName];
-}
-
 
 @end
+

@@ -9,10 +9,10 @@
 #import <Twitter/Twitter.h>
 
 #import "BCViewController.h"
-#import "BCBadgeLevel.h"
+#import "BCBadge.h"
 #import "BCBadgeManager.h"
 #import "BCMetric.h"
-#import "BCBadge.h"
+#import "BCBadgeDefinition.h"
 
 
 int const kBadgesPerRow    = 3;
@@ -59,7 +59,7 @@ int const kBadgeViewHeight = 100;
     NSArray* badgeLevels =[_badgeManager currentBadges];
     
     int earned = 0;
-    for (BCBadgeLevel* badgeLevel in badgeLevels) {
+    for (BCBadge* badgeLevel in badgeLevels) {
         if (badgeLevel.level > 1) {
             earned++;
         }
@@ -79,7 +79,7 @@ int const kBadgeViewHeight = 100;
 
 - (void) renderBadgesInto:(UIView *) parentView {
     for (int pos = 0; pos < [self numberOfBadges]; pos++) {
-        BCBadgeLevel* level = [self badgeForPosition:pos];
+        BCBadge* level = [self badgeForPosition:pos];
         
         UIView* badgeView = [[UIView alloc] initWithFrame:[self positionForBadgeNumber:pos]];
         
@@ -113,7 +113,7 @@ int const kBadgeViewHeight = 100;
     return [self.badges count];
 }
 
-- (BCBadgeLevel*) badgeForPosition:(int) pos {
+- (BCBadge*) badgeForPosition:(int) pos {
     return [self.badges objectAtIndex:pos];
 }
 
@@ -125,7 +125,7 @@ int const kBadgeViewHeight = 100;
     return CGRectMake(kBadgeViewWidth*col, kBadgeViewHeight*row, kBadgeViewWidth, kBadgeViewHeight);
 }
 
-- (UIImage*) imageForBadgeLevel:(BCBadgeLevel*) badgeLevel {
+- (UIImage*) imageForBadgeLevel:(BCBadge*) badgeLevel {
     return [UIImage imageNamed:badgeLevel.badgeImage];
 }
 
@@ -140,7 +140,7 @@ int const kBadgeViewHeight = 100;
 }
 
 - (void)badgeClicked:(UIButton*) sender {
-    BCBadgeLevel* badge = [_badges objectAtIndex:[sender tag]];
+    BCBadge* badge = [_badges objectAtIndex:[sender tag]];
     
     TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
 

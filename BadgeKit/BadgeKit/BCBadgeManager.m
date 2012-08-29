@@ -8,7 +8,7 @@
 
 #import "BCBadgeManager.h"
 #import "BCMetric.h"
-#import "BCBadge.h"
+#import "BCBadgeDefinition.h"
 #import "BCViewController.m"
 
 NSString* const kBCNotificationLevelUp = @"BCLevelUp";
@@ -99,7 +99,7 @@ static BCBadgeManager *sharedInstance = nil;
 // update badges from new definitions
 - (BOOL) updateBadges {
     BOOL dirty = false;
-    for (BCBadge* badge in [self badgeDefinitions]) {
+    for (BCBadgeDefinition* badge in [self badgeDefinitions]) {
         if ([_userBadges objectForKey:badge.name] == nil) {
             [_userBadges setObject:[NSNumber numberWithInt:1] forKey:badge.name];
             dirty = true;
@@ -140,14 +140,14 @@ static BCBadgeManager *sharedInstance = nil;
     NSMutableArray* defs = [NSMutableArray array];
     
     for (NSDictionary* badgeDict in [_badgeOptions objectForKey:kBCBadges]) {
-        [defs addObject:[[BCBadge alloc] initFromDictionary:badgeDict]];
+        [defs addObject:[[BCBadgeDefinition alloc] initFromDictionary:badgeDict]];
     }
     return defs;
 }
 
 // ugly
--(BCBadge*) badgeNamed:(NSString*) name in:(NSArray*) defs {
-    for (BCBadge* badge in defs) {
+-(BCBadgeDefinition*) badgeNamed:(NSString*) name in:(NSArray*) defs {
+    for (BCBadgeDefinition* badge in defs) {
         if ([name isEqualToString:badge.name]) {
             return badge;
         }
@@ -161,7 +161,7 @@ static BCBadgeManager *sharedInstance = nil;
     NSMutableArray *badges = [NSMutableArray array];
     for (NSString* badgeName in [_userBadges keyEnumerator]) {
         NSNumber* number = [_userBadges objectForKey:badgeName];
-        BCBadge* badge = [self badgeNamed:badgeName in:defs];
+        BCBadgeDefinition* badge = [self badgeNamed:badgeName in:defs];
         if (badge) {
             [badges addObject:[badge badgeLevel:[number intValue]]];
         }
@@ -172,7 +172,7 @@ static BCBadgeManager *sharedInstance = nil;
 -(void) checkBadges {
     NSArray *defs = [self badgeDefinitions];
     
-    for (BCBadge* badge in defs) {
+    for (BCBadgeDefinition* badge in defs) {
         int levelForCurrentMetric = [badge levelForValue:[self metric:badge.metricName]];
         int currentLevel = [self badgeLevel:badge.name];
         

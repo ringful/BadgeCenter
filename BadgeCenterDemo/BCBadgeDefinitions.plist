@@ -22,6 +22,13 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>Official User level 1 description</string>
+			  <string>Official User level 2 description</string>
+			  <string>Official User level 3 description</string>
+			  <string>Official User level 4 descriptions</string>
+			</array>
 			<key>id</key>
 			<string>officialuser</string>
 			<key>name</key>
@@ -36,6 +43,13 @@
 				<integer>5</integer>
 				<integer>25</integer>
 				<integer>50</integer>
+			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>7 Day Stretch level 1 description</string>
+			  <string>7 Day Stretch level 2 description</string>
+			  <string>7 Day Stretch level 3 description</string>
+			  <string>7 Day Stretch level 4 descriptions</string>
 			</array>
 			<key>id</key>
 			<string>7daystretch</string>
@@ -52,6 +66,13 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>App Lover level 1 description</string>
+			  <string>App Lover level 2 description</string>
+			  <string>App Lover level 3 description</string>
+			  <string>App Lover level 4 descriptions</string>
+			</array>
 			<key>id</key>
 			<string>applover</string>
 			<key>name</key>
@@ -66,6 +87,13 @@
 				<integer>5</integer>
 				<integer>25</integer>
 				<integer>50</integer>
+			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>Play it safe! level 1 description</string>
+			  <string>Play it safe! level 2 description</string>
+			  <string>Play it safe! level 3 description</string>
+			  <string>Play it safe! level 4 descriptions</string>
 			</array>
 			<key>id</key>
 			<string>playitsafe</string>
@@ -82,6 +110,13 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>Reporter level 1 description</string>
+			  <string>Reporter level 2 description</string>
+			  <string>Reporter level 3 description</string>
+			  <string>Reporter level 4 descriptions</string>
+			</array>
 			<key>id</key>
 			<string>reporter</string>
 			<key>name</key>
@@ -97,6 +132,13 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>Scan Master level 1 description</string>
+			  <string>Scan Master level 2 description</string>
+			  <string>Scan Master level 3 description</string>
+			  <string>Scan Master level 4 descriptions</string>
+			</array>
 			<key>id</key>
 			<string>scanmaster</string>
 			<key>name</key>
@@ -111,6 +153,13 @@
 				<integer>5</integer>
 				<integer>25</integer>
 				<integer>50</integer>
+			</array>
+			<key>descriptions</key>
+			<array>
+			  <string>The Socialite level 1 description</string>
+			  <string>The Socialite level 2 description</string>
+			  <string>The Socialite level 3 description</string>
+			  <string>The Socialite level 4 descriptions</string>
 			</array>
 			<key>id</key>
 			<string>socialite</string>

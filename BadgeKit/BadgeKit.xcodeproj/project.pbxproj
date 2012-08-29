@@ -15,13 +15,13 @@
 		94D8211C15DD4EE10096CD02 /* libBadgeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8210315DD4EE10096CD02 /* libBadgeKit.a */; };
 		94D8212215DD4EE10096CD02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D8212015DD4EE10096CD02 /* InfoPlist.strings */; };
 		94D8212515DD4EE10096CD02 /* BadgeKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8212415DD4EE10096CD02 /* BadgeKitTests.m */; };
-		94D8229615DD52CD0096CD02 /* BCBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8228D15DD52CD0096CD02 /* BCBadge.m */; };
-		94D8229715DD52CD0096CD02 /* BCBadgeLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8228F15DD52CD0096CD02 /* BCBadgeLevel.m */; };
+		94D8229615DD52CD0096CD02 /* BCBadgeDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8228D15DD52CD0096CD02 /* BCBadgeDefinition.m */; };
+		94D8229715DD52CD0096CD02 /* BCBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8228F15DD52CD0096CD02 /* BCBadge.m */; };
 		94D8229815DD52CD0096CD02 /* BCBadgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8229115DD52CD0096CD02 /* BCBadgeManager.m */; };
 		94D8229915DD52CD0096CD02 /* BCMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8229315DD52CD0096CD02 /* BCMetric.m */; };
 		94D8229A15DD52CD0096CD02 /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8229515DD52CD0096CD02 /* BCViewController.m */; };
-		94D822A615DD58EE0096CD02 /* BCBadge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8228C15DD52CD0096CD02 /* BCBadge.h */; };
-		94D822A715DD58EE0096CD02 /* BCBadgeLevel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8228E15DD52CD0096CD02 /* BCBadgeLevel.h */; };
+		94D822A615DD58EE0096CD02 /* BCBadgeDefinition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8228C15DD52CD0096CD02 /* BCBadgeDefinition.h */; };
+		94D822A715DD58EE0096CD02 /* BCBadge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8228E15DD52CD0096CD02 /* BCBadge.h */; };
 		94D822A815DD58EE0096CD02 /* BCBadgeManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8229015DD52CD0096CD02 /* BCBadgeManager.h */; };
 		94D822A915DD58EE0096CD02 /* BCMetric.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8229215DD52CD0096CD02 /* BCMetric.h */; };
 		94D822AA15DD58EE0096CD02 /* BCViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 94D8229415DD52CD0096CD02 /* BCViewController.h */; };
@@ -44,8 +44,8 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				94D822A615DD58EE0096CD02 /* BCBadge.h in CopyFiles */,
-				94D822A715DD58EE0096CD02 /* BCBadgeLevel.h in CopyFiles */,
+				94D822A615DD58EE0096CD02 /* BCBadgeDefinition.h in CopyFiles */,
+				94D822A715DD58EE0096CD02 /* BCBadge.h in CopyFiles */,
 				94D822A815DD58EE0096CD02 /* BCBadgeManager.h in CopyFiles */,
 				94D822A915DD58EE0096CD02 /* BCMetric.h in CopyFiles */,
 				94D822AA15DD58EE0096CD02 /* BCViewController.h in CopyFiles */,
@@ -68,10 +68,10 @@
 		94D8212115DD4EE10096CD02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94D8212315DD4EE10096CD02 /* BadgeKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeKitTests.h; sourceTree = "<group>"; };
 		94D8212415DD4EE10096CD02 /* BadgeKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeKitTests.m; sourceTree = "<group>"; };
-		94D8228C15DD52CD0096CD02 /* BCBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadge.h; sourceTree = "<group>"; };
-		94D8228D15DD52CD0096CD02 /* BCBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadge.m; sourceTree = "<group>"; };
-		94D8228E15DD52CD0096CD02 /* BCBadgeLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadgeLevel.h; sourceTree = "<group>"; };
-		94D8228F15DD52CD0096CD02 /* BCBadgeLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadgeLevel.m; sourceTree = "<group>"; };
+		94D8228C15DD52CD0096CD02 /* BCBadgeDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadgeDefinition.h; sourceTree = "<group>"; };
+		94D8228D15DD52CD0096CD02 /* BCBadgeDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadgeDefinition.m; sourceTree = "<group>"; };
+		94D8228E15DD52CD0096CD02 /* BCBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadge.h; sourceTree = "<group>"; };
+		94D8228F15DD52CD0096CD02 /* BCBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadge.m; sourceTree = "<group>"; };
 		94D8229015DD52CD0096CD02 /* BCBadgeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBadgeManager.h; sourceTree = "<group>"; };
 		94D8229115DD52CD0096CD02 /* BCBadgeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBadgeManager.m; sourceTree = "<group>"; };
 		94D8229215DD52CD0096CD02 /* BCMetric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMetric.h; sourceTree = "<group>"; };
@@ -136,10 +136,10 @@
 		94D8210815DD4EE10096CD02 /* BadgeKit */ = {
 			isa = PBXGroup;
 			children = (
-				94D8228C15DD52CD0096CD02 /* BCBadge.h */,
-				94D8228D15DD52CD0096CD02 /* BCBadge.m */,
-				94D8228E15DD52CD0096CD02 /* BCBadgeLevel.h */,
-				94D8228F15DD52CD0096CD02 /* BCBadgeLevel.m */,
+				94D8228C15DD52CD0096CD02 /* BCBadgeDefinition.h */,
+				94D8228D15DD52CD0096CD02 /* BCBadgeDefinition.m */,
+				94D8228E15DD52CD0096CD02 /* BCBadge.h */,
+				94D8228F15DD52CD0096CD02 /* BCBadge.m */,
 				94D8229015DD52CD0096CD02 /* BCBadgeManager.h */,
 				94D8229115DD52CD0096CD02 /* BCBadgeManager.m */,
 				94D8229215DD52CD0096CD02 /* BCMetric.h */,
@@ -285,8 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D8229615DD52CD0096CD02 /* BCBadge.m in Sources */,
-				94D8229715DD52CD0096CD02 /* BCBadgeLevel.m in Sources */,
+				94D8229615DD52CD0096CD02 /* BCBadgeDefinition.m in Sources */,
+				94D8229715DD52CD0096CD02 /* BCBadge.m in Sources */,
 				94D8229815DD52CD0096CD02 /* BCBadgeManager.m in Sources */,
 				94D8229915DD52CD0096CD02 /* BCMetric.m in Sources */,
 				94D8229A15DD52CD0096CD02 /* BCViewController.m in Sources */,
