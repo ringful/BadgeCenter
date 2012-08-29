@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BCViewController : UIViewController
+@interface BCViewController : UIViewController <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView  *badgesView;
 @property (weak, nonatomic) IBOutlet UILabel *header;

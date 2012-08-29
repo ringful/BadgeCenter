@@ -11,6 +11,4 @@
 @interface BCDemoViewController : UIViewController
 - (IBAction)viewMyBadges:(id)sender;
 - (IBAction)bumpCounter:(UIStepper *)sender;
-
-
 @end

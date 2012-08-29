@@ -22,12 +22,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>Official User level 1 description</string>
-			  <string>Official User level 2 description</string>
-			  <string>Official User level 3 description</string>
-			  <string>Official User level 4 descriptions</string>
+			  <string>Official User no badge description</string>
+			  <string>Official User silver description</string>
+			  <string>Official User gold description</string>
+			  <string>Official User diamond description</string>
 			</array>
 			<key>id</key>
 			<string>officialuser</string>
@@ -44,12 +44,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>7 Day Stretch level 1 description</string>
-			  <string>7 Day Stretch level 2 description</string>
-			  <string>7 Day Stretch level 3 description</string>
-			  <string>7 Day Stretch level 4 descriptions</string>
+			  <string>7 Day Stretch no badge description</string>
+			  <string>7 Day Stretch silver description</string>
+			  <string>7 Day Stretch gold description</string>
+			  <string>7 Day Stretch diamond description</string>
 			</array>
 			<key>id</key>
 			<string>7daystretch</string>
@@ -66,12 +66,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>App Lover level 1 description</string>
-			  <string>App Lover level 2 description</string>
-			  <string>App Lover level 3 description</string>
-			  <string>App Lover level 4 descriptions</string>
+			  <string>App Lover no badge description</string>
+			  <string>App Lover silver description</string>
+			  <string>App Lover gold description</string>
+			  <string>App Lover diamond description</string>
 			</array>
 			<key>id</key>
 			<string>applover</string>
@@ -88,12 +88,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>Play it safe! level 1 description</string>
-			  <string>Play it safe! level 2 description</string>
-			  <string>Play it safe! level 3 description</string>
-			  <string>Play it safe! level 4 descriptions</string>
+			  <string>Play it safe! no badge description</string>
+			  <string>Play it safe! silver description</string>
+			  <string>Play it safe! gold description</string>
+			  <string>Play it safe! diamond description</string>
 			</array>
 			<key>id</key>
 			<string>playitsafe</string>
@@ -110,12 +110,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>Reporter level 1 description</string>
-			  <string>Reporter level 2 description</string>
-			  <string>Reporter level 3 description</string>
-			  <string>Reporter level 4 descriptions</string>
+			  <string>Reporter no badge description</string>
+			  <string>Reporter silver description</string>
+			  <string>Reporter gold description</string>
+			  <string>Reporter diamond description</string>
 			</array>
 			<key>id</key>
 			<string>reporter</string>
@@ -132,12 +132,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>Scan Master level 1 description</string>
-			  <string>Scan Master level 2 description</string>
-			  <string>Scan Master level 3 description</string>
-			  <string>Scan Master level 4 descriptions</string>
+			  <string>Scan Master no badge description</string>
+			  <string>Scan Master silver description</string>
+			  <string>Scan Master gold description</string>
+			  <string>Scan Master diamond description</string>
 			</array>
 			<key>id</key>
 			<string>scanmaster</string>
@@ -154,12 +154,12 @@
 				<integer>25</integer>
 				<integer>50</integer>
 			</array>
-			<key>descriptions</key>
+			<key>messages</key>
 			<array>
-			  <string>The Socialite level 1 description</string>
-			  <string>The Socialite level 2 description</string>
-			  <string>The Socialite level 3 description</string>
-			  <string>The Socialite level 4 descriptions</string>
+			  <string>The Socialite no badge description</string>
+			  <string>The Socialite silver description</string>
+			  <string>The Socialite gold description</string>
+			  <string>The Socialite diamond description</string>
 			</array>
 			<key>id</key>
 			<string>socialite</string>

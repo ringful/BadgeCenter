@@ -20,7 +20,7 @@
         self.displayName = [dict objectForKey:@"name"];
         self.metricName  = [dict objectForKey:@"metric"];
         self.levels      = [dict objectForKey:@"levels"];
-        self.messages    = [dict objectForKey:@"description"];
+        self.messages    = [dict objectForKey:@"messages"];
     }
     return self;
 }

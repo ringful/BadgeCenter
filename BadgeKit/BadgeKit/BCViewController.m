@@ -64,9 +64,7 @@ int const kBadgeViewHeight = 100;
             earned++;
         }
     }
-    
-
-    
+        
     self.subtitle.text = [NSString stringWithFormat:@"You have earned %d of %d badges",
                           earned,
                           [badgeLevels count]];
@@ -139,11 +137,39 @@ int const kBadgeViewHeight = 100;
     [super viewDidUnload];
 }
 
+
 - (void)badgeClicked:(UIButton*) sender {
     BCBadge* badge = [_badges objectAtIndex:[sender tag]];
-    
-    TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
 
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations"
+                                                    message:badge.message
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    if (badge.level > 1) {
+        [alert addButtonWithTitle:@"Tweet"];
+    }
+    
+    alert.tag = [sender tag];
+    
+    [alert show];
+}
+
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    BCBadge* badge = [_badges objectAtIndex:[alertView tag]];
+
+    if (buttonIndex == 0) {
+        return;
+    } else {
+        [self tweetBadge:badge];
+    }    
+}
+
+-(void)tweetBadge:(BCBadge*) badge {    
+    TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
+    
     [tweetSheet setInitialText:[NSString stringWithFormat:@"I just earned the %@ badge in BadgeCenterDemo!", badge.badgeName]];
     [tweetSheet addImage:[UIImage imageNamed:badge.badgeImage]];
     
