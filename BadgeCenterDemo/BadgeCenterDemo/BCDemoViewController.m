@@ -8,6 +8,8 @@
 
 #import "BCDemoViewController.h"
 #import <BadgeKit/BCBadgeManager.h>
+#import <BadgeKit/BCBadge.h>
+
 
 @interface BCDemoViewController ()
 
@@ -118,12 +120,15 @@ static const int TITLE_BASE = 301;
     }    
 }
 
--(void) levelUp:(NSNotification*) notification{
-    NSDictionary* info = [notification userInfo];
-    NSLog(@"LEVEL UP! %@", info);
 
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Level Up "
-                                                        message:[NSString stringWithFormat:@"badge %@", [info objectForKey:@"badge"]]
+-(void) levelUp:(NSNotification*) notification{
+    NSDictionary* info = [notification userInfo];    
+    NSLog(@"LEVEL UP! %@", info);
+    
+    BCBadge* badge = [info objectForKey:@"badge"];
+    
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Level Up %@", badge.badgeName]
+                                                        message:[NSString stringWithFormat:@"You are now level %d", badge.level]
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

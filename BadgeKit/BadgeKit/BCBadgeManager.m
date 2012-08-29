@@ -172,17 +172,17 @@ static BCBadgeManager *sharedInstance = nil;
 -(void) checkBadges {
     NSArray *defs = [self badgeDefinitions];
     
-    for (BCBadgeDefinition* badge in defs) {
-        int levelForCurrentMetric = [badge levelForValue:[self metric:badge.metricName]];
-        int currentLevel = [self badgeLevel:badge.name];
+    for (BCBadgeDefinition* badgeDefinition in defs) {
+        int levelForCurrentMetric = [badgeDefinition levelForValue:[self metric:badgeDefinition.metricName]];
+        int currentLevel = [self badgeLevel:badgeDefinition.name];
         
-        NSLog(@"badge %@ metric %@ at %d want %d", badge.name, badge.metricName, currentLevel, levelForCurrentMetric);
+        NSLog(@"badge %@ metric %@ at %d want %d", badgeDefinition.name, badgeDefinition.metricName, currentLevel, levelForCurrentMetric);
         
-        if (levelForCurrentMetric > [self badgeLevel:badge.name]) {
-            [_userBadges setObject:[NSNumber numberWithInt:levelForCurrentMetric] forKey:badge.name];
+        if (levelForCurrentMetric > [self badgeLevel:badgeDefinition.name]) {
+            [_userBadges setObject:[NSNumber numberWithInt:levelForCurrentMetric] forKey:badgeDefinition.name];
             [self saveBadges];
             
-            [self badgeDidLevelUp:badge.name];
+            [self badgeDidLevelUp:[badgeDefinition badgeLevel:currentLevel]];
         }        
     }
 }
@@ -213,24 +213,23 @@ static BCBadgeManager *sharedInstance = nil;
     NSLog(@"metric %@ is now %d", name, value);
     [self saveMetrics];
     
+    NSDictionary* userInfo = @{
+        @"metric": name,
+        @"value": [NSNumber numberWithInt:value]
+    };
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kBCNotificationMetricChanged
                                                         object:nil
-                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                                name,  @"metric",
-                                                                [NSNumber numberWithInt:value], @"value",
-                                                                nil]];
+                                                      userInfo:userInfo];
     [self checkBadges];
 }
 
--(void) badgeDidLevelUp: (NSString*) name {
-    // call a delegate perhaps
-    NSLog(@"baged %@ level up", name);
+-(void) badgeDidLevelUp: (BCBadge*) badge {
+    NSLog(@"badge %@ level up", badge.badgeName);
 
     [[NSNotificationCenter defaultCenter] postNotificationName:kBCNotificationLevelUp
                                                         object:nil
-                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                                name,  @"badge",
-                                                                nil]];
+                                                      userInfo:@{@"badge": badge}];
 }
 
 
