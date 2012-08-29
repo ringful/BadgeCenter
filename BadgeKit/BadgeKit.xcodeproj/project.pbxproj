@@ -56,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9400CB6C15EBFCA80065BE49 /* BCBadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCBadgeView.xib; sourceTree = "<group>"; };
 		94D8210315DD4EE10096CD02 /* libBadgeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBadgeKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8210615DD4EE10096CD02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94D8210A15DD4EE10096CD02 /* BadgeKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BadgeKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		94D820F815DD4EE10096CD02 = {
 			isa = PBXGroup;
 			children = (
+				9400CB6C15EBFCA80065BE49 /* BCBadgeView.xib */,
 				94D8210815DD4EE10096CD02 /* BadgeKit */,
 				94D8211D15DD4EE10096CD02 /* BadgeKitTests */,
 				94D8210515DD4EE10096CD02 /* Frameworks */,
@@ -186,6 +188,7 @@
 			buildPhases = (
 				94D820FF15DD4EE10096CD02 /* Sources */,
 				94D8210015DD4EE10096CD02 /* Frameworks */,
+				9400CB6E15EBFD7D0065BE49 /* Resources */,
 				94D8210115DD4EE10096CD02 /* CopyFiles */,
 			);
 			buildRules = (
@@ -244,6 +247,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9400CB6E15EBFD7D0065BE49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94D8211115DD4EE10096CD02 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
