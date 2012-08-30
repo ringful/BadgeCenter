@@ -24,10 +24,10 @@
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>Official User no badge description</string>
-			  <string>Official User silver description</string>
-			  <string>Official User gold description</string>
-			  <string>Official User diamond description</string>
+			  <string>Please open the app at least 5 times to earn this badge!</string>
+			  <string>a silver level badge for Official User!</string>
+			  <string>a gold level badge for Official User!</string>
+			  <string>a diamond level badge for Official User!</string>
 			</array>
 			<key>id</key>
 			<string>officialuser</string>
@@ -40,16 +40,16 @@
 			<key>levels</key>
 			<array>
 				<integer>0</integer>
-				<integer>5</integer>
-				<integer>25</integer>
-				<integer>50</integer>
+				<integer>7</integer>
+				<integer>14</integer>
+				<integer>21</integer>
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>7 Day Stretch no badge description</string>
-			  <string>7 Day Stretch silver description</string>
-			  <string>7 Day Stretch gold description</string>
-			  <string>7 Day Stretch diamond description</string>
+			  <string>Please use the app at least once a day for 7 days in a row to earn this badge.</string>
+			  <string>a badge for using the app 7 days in a row!</string>
+			  <string>a badge for using the app 14 days in a row!</string>
+			  <string>a badge for using the app 21 days in a row!</string>
 			</array>
 			<key>id</key>
 			<string>7daystretch</string>
@@ -68,10 +68,10 @@
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>App Lover no badge description</string>
-			  <string>App Lover silver description</string>
-			  <string>App Lover gold description</string>
-			  <string>App Lover diamond description</string>
+			  <string>Please explore all parts of the this app to earn this badge.</string>
+			  <string>a silver level badge for App Lover!</string>
+			  <string>a gold level badge for App Lover!</string>
+			  <string>a diamond level badge for App Lover!</string>
 			</array>
 			<key>id</key>
 			<string>applover</string>
@@ -90,10 +90,10 @@
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>Play it safe! no badge description</string>
-			  <string>Play it safe! silver description</string>
-			  <string>Play it safe! gold description</string>
-			  <string>Play it safe! diamond description</string>
+			  <string>Link your app with your DropBox account to earn this badge!</string>
+			  <string>a badge for linking your DropBox account.</string>
+			  <string>a badge for auto-backup on DropBox.</string>
+			  <string>a diamond badge to Play it safe!</string>
 			</array>
 			<key>id</key>
 			<string>playitsafe</string>
@@ -112,10 +112,10 @@
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>Reporter no badge description</string>
-			  <string>Reporter silver description</string>
-			  <string>Reporter gold description</string>
-			  <string>Reporter diamond description</string>
+			  <string>Report your statistics to ear the reporter badge!</string>
+			  <string>a badge for silver level Reporter</string>
+			  <string>a badge for gold level Reporter</string>
+			  <string>a badge for diamond level Reporter</string>
 			</array>
 			<key>id</key>
 			<string>reporter</string>
@@ -134,10 +134,10 @@
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>Scan Master no badge description</string>
-			  <string>Scan Master silver description</string>
-			  <string>Scan Master gold description</string>
-			  <string>Scan Master diamond description</string>
+			  <string>Scan medicine barcode to earn this badge!</string>
+			  <string>a badge for 5 medicine barcode scans</string>
+			  <string>a badge for 25 medicine barcode scans</string>
+			  <string>a badge for 50 medicine barcode scans</string>
 			</array>
 			<key>id</key>
 			<string>scanmaster</string>
@@ -156,10 +156,10 @@
 			</array>
 			<key>messages</key>
 			<array>
-			  <string>The Socialite no badge description</string>
-			  <string>The Socialite silver description</string>
-			  <string>The Socialite gold description</string>
-			  <string>The Socialite diamond description</string>
+			  <string>Share your progress to beome a Socialite!</string>
+			  <string>a silver badge for sharing!</string>
+			  <string>a gold badge for sharing!</string>
+			  <string>a diamond badge for sharing!</string>
 			</array>
 			<key>id</key>
 			<string>socialite</string>
