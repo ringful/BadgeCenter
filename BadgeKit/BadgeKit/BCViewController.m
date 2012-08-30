@@ -46,6 +46,10 @@ int const kBadgeViewHeight = 100;
 }
 
 -(void) setBackground {
+    UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[_badgeManager backgroundImageName]]];
+    [self.view setBackgroundColor:bgColor];
+    
+    /*
     NSString * imageName = [_badgeManager backgroundImageName];
     if (imageName) {
         UIImage *image = [UIImage imageNamed:imageName];
@@ -53,6 +57,7 @@ int const kBadgeViewHeight = 100;
             self.backgroundView.image = image;
         }
     }
+    */
 }
 
 -(void) setBadgeCount {
@@ -133,7 +138,7 @@ int const kBadgeViewHeight = 100;
     [self setTitle:nil];
     [self setSubtitle:nil];
     
-    [self setBackgroundView:nil];
+    // [self setBackgroundView:nil];
     [super viewDidUnload];
 }
 
@@ -141,14 +146,20 @@ int const kBadgeViewHeight = 100;
 - (void)badgeClicked:(UIButton*) sender {
     BCBadge* badge = [_badges objectAtIndex:[sender tag]];
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations"
-                                                    message:badge.message
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+    UIAlertView *alert = nil;
     
     if (badge.level > 1) {
-        [alert addButtonWithTitle:@"Tweet"];
+        alert = [[UIAlertView alloc] initWithTitle:@"Congratulations"
+                                message:[NSString stringWithFormat:@"You have earned %@", badge.message]
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles:@"Tweet",nil];
+    } else {
+        alert = [[UIAlertView alloc] initWithTitle:@"Try again"
+                        message:badge.message
+                        delegate:self
+                        cancelButtonTitle:@"OK"
+                        otherButtonTitles:nil];
     }
     
     alert.tag = [sender tag];
@@ -170,7 +181,7 @@ int const kBadgeViewHeight = 100;
 -(void)tweetBadge:(BCBadge*) badge {    
     TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
     
-    [tweetSheet setInitialText:[NSString stringWithFormat:@"I just earned the %@ badge in BadgeCenterDemo!", badge.badgeName]];
+    [tweetSheet setInitialText:[NSString stringWithFormat:@"I just earned %@", badge.message]];
     [tweetSheet addImage:[UIImage imageNamed:badge.badgeImage]];
     
     tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result){
