@@ -128,7 +128,7 @@ static const int TITLE_BASE = 301;
     BCBadge* badge = [info objectForKey:@"badge"];
     
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Level Up %@", badge.badgeName]
-                                                        message:[NSString stringWithFormat:@"You are now level %d", badge.level]
+                                                        message:[NSString stringWithFormat:@"You have just earned %@", badge.message]
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

@@ -182,7 +182,7 @@ static BCBadgeManager *sharedInstance = nil;
             [_userBadges setObject:[NSNumber numberWithInt:levelForCurrentMetric] forKey:badgeDefinition.name];
             [self saveBadges];
             
-            [self badgeDidLevelUp:[badgeDefinition badgeLevel:currentLevel]];
+            [self badgeDidLevelUp:[badgeDefinition badgeLevel:levelForCurrentMetric]];
         }        
     }
 }
