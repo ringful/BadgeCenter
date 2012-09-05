@@ -11,7 +11,6 @@
 
 #import <BadgeKit/BCBadgeManager.h>
 
-
 @interface BCDemoAppDelegate ()
     @property (nonatomic, strong) BCBadgeManager* manager;
 @end
@@ -25,8 +24,13 @@
     NSLog(@"Manager! %@", _manager);
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     self.viewController = [[BCDemoViewController alloc] initWithNibName:@"BCDemoViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    UINavigationController*  navController = [[UINavigationController alloc]
+                                                 initWithRootViewController: _viewController];
+    
+    self.window.rootViewController = navController;
+
     [self.window makeKeyAndVisible];
     
     return YES;

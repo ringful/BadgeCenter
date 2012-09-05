@@ -34,51 +34,40 @@ int const kBadgeViewHeight = 100;
     self.badgeManager = [BCBadgeManager sharedManager];
     
     [self setBackground];
-
-    self.header.text   = @"Badge Collection";
-    [self setBadgeCount];
     
-    self.badges = [self createBadgeList];
+    self.title = @"My Badges";
+    self.header.text   = @"Badge Collection";
 
-    NSLog(@"testing metric is now %d", [_badgeManager incrementMetric:@"testing" by:1]);
-
+    [self setBadgeCount];
+    self.badges = [_badgeManager currentBadges];
+    
     [self renderBadgesInto:self.badgesView];
 }
 
 -(void) setBackground {
     UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[_badgeManager backgroundImageName]]];
     [self.view setBackgroundColor:bgColor];
-    
-    /*
-    NSString * imageName = [_badgeManager backgroundImageName];
-    if (imageName) {
-        UIImage *image = [UIImage imageNamed:imageName];
-        if (image) {
-            self.backgroundView.image = image;
-        }
-    }
-    */
 }
 
--(void) setBadgeCount {
-    NSArray* badgeLevels =[_badgeManager currentBadges];
-    
+-(int) earnedBadgeCount:(NSArray*)badgeLevels {
     int earned = 0;
     for (BCBadge* badgeLevel in badgeLevels) {
         if (badgeLevel.level > 1) {
             earned++;
         }
     }
-        
+    return earned;
+}
+
+
+-(void) setBadgeCount {
+    NSArray* badgeLevels =[_badgeManager currentBadges];
+    
     self.subtitle.text = [NSString stringWithFormat:@"You have earned %d of %d badges",
-                          earned,
+                          [self earnedBadgeCount: badgeLevels],
                           [badgeLevels count]];
-
 }
 
--(NSArray*) createBadgeList {
-    return [_badgeManager currentBadges];
-}
 
 - (void) renderBadgesInto:(UIView *) parentView {
     for (int pos = 0; pos < [self numberOfBadges]; pos++) {

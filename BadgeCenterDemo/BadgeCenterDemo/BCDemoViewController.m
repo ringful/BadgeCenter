@@ -25,7 +25,7 @@ static const int TITLE_BASE = 301;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     self.metricNames = [NSArray arrayWithObjects:@"reported",
                         @"user",
                         @"daysused",
@@ -37,6 +37,8 @@ static const int TITLE_BASE = 301;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationItem.title = @"BadgeKit Demo";
+
     BCBadgeManager* manager = [BCBadgeManager sharedManager];
     for (int i=0; i<[_metricNames count]; i++) {
         NSString* metricName = [_metricNames objectAtIndex:i];
@@ -58,8 +60,9 @@ static const int TITLE_BASE = 301;
 
 }
 
--(void) viewWillDisappear:(BOOL)animated {
+-(void) viewWillDisappear:(BOOL)animated {    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    self.navigationItem.title=@"Demo";
 }
 
 -(UIStepper*) stepper:(int) i {
@@ -92,10 +95,15 @@ static const int TITLE_BASE = 301;
     }
 }
 
-- (IBAction)viewMyBadges:(id)sender {    
+- (IBAction)viewMyBadges:(id)sender {
     UIViewController* badgeView = [[BCBadgeManager sharedManager] badgeViewController];
     
-    [self presentModalViewController:badgeView animated:YES];
+    NSLog(@"nav %@", self.navigationController);
+    if (self.navigationController) {
+        [self.navigationController pushViewController:badgeView animated:YES];
+    } else {
+        [self presentModalViewController:badgeView animated:YES];
+    }
 }
 
 
