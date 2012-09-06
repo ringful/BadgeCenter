@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BCDemoViewController : UIViewController
+@interface BCDemoViewController : UIViewController <UIPopoverControllerDelegate>
 - (IBAction)viewMyBadges:(id)sender;
+- (IBAction)viewMyBadgesInPopover:(id)sender;
 - (IBAction)bumpCounter:(UIStepper *)sender;
 @end

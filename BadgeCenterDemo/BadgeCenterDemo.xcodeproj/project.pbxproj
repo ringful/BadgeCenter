@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94384C2115F8E359008590E2 /* BCDemoViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94384C2015F8E359008590E2 /* BCDemoViewController~ipad.xib */; };
 		9483D96615EBFFA700CAD7E8 /* libBadgeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9483D96515EBFFA700CAD7E8 /* libBadgeKit.a */; };
 		9483D96A15EC19BE00CAD7E8 /* BCBadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9483D96915EC19BE00CAD7E8 /* BCBadgeView.xib */; };
 		94D8213E15DD4F300096CD02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8213D15DD4F300096CD02 /* UIKit.framework */; };
@@ -101,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94384C2015F8E359008590E2 /* BCDemoViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BCDemoViewController~ipad.xib"; sourceTree = "<group>"; };
 		9483D96515EBFFA700CAD7E8 /* libBadgeKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBadgeKit.a; path = "../BadgeKit/build/Release-iphoneos/libBadgeKit.a"; sourceTree = SOURCE_ROOT; };
 		9483D96915EC19BE00CAD7E8 /* BCBadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BCBadgeView.xib; path = ../BadgeKit/BCBadgeView.xib; sourceTree = SOURCE_ROOT; };
 		94D8213915DD4F300096CD02 /* BadgeCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgeCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +261,7 @@
 				94D8215615DD4F300096CD02 /* BCDemoViewController.m */,
 				94D8214415DD4F300096CD02 /* Supporting Files */,
 				94D822F515DD66AF0096CD02 /* BCDemoViewController.xib */,
+				94384C2015F8E359008590E2 /* BCDemoViewController~ipad.xib */,
 			);
 			path = BadgeCenterDemo;
 			sourceTree = "<group>";
@@ -527,8 +530,9 @@
 				94D8228715DD4FEE0096CD02 /* socialite-4.png in Resources */,
 				94D8228815DD4FEE0096CD02 /* socialite-4@2x.png in Resources */,
 				94D8228B15DD52230096CD02 /* BCBadgeDefinitions.plist in Resources */,
-				94D822F615DD66AF0096CD02 /* BCDemoViewController.xib in Resources */,
 				9483D96A15EC19BE00CAD7E8 /* BCBadgeView.xib in Resources */,
+				94D822F615DD66AF0096CD02 /* BCDemoViewController.xib in Resources */,
+				94384C2115F8E359008590E2 /* BCDemoViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,9 +668,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgeCenterDemo/BadgeCenterDemo-Prefix.pch";
 				INFOPLIST_FILE = "BadgeCenterDemo/BadgeCenterDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -677,9 +682,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgeCenterDemo/BadgeCenterDemo-Prefix.pch";
 				INFOPLIST_FILE = "BadgeCenterDemo/BadgeCenterDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

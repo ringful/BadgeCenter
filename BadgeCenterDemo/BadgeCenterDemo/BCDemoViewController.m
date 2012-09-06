@@ -12,8 +12,8 @@
 
 
 @interface BCDemoViewController ()
-
 @property (strong, nonatomic) NSArray *metricNames;
+@property (strong, nonatomic) UIPopoverController *badgePopover;
 @end
 
 @implementation BCDemoViewController
@@ -65,6 +65,16 @@ static const int TITLE_BASE = 301;
     self.navigationItem.title=@"Demo";
 }
 
+
+-(void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration
+{
+    if (self.badgePopover) {
+        [self.badgePopover dismissPopoverAnimated:NO];
+        self.badgePopover = nil;
+    }
+}
+
 -(UIStepper*) stepper:(int) i {
     return (UIStepper*) [self.view viewWithTag:STEP_BASE+i];
 }
@@ -98,11 +108,29 @@ static const int TITLE_BASE = 301;
 - (IBAction)viewMyBadges:(id)sender {
     UIViewController* badgeView = [[BCBadgeManager sharedManager] badgeViewController];
     
-    NSLog(@"nav %@", self.navigationController);
     if (self.navigationController) {
         [self.navigationController pushViewController:badgeView animated:YES];
     } else {
         [self presentModalViewController:badgeView animated:YES];
+    }
+}
+
+
+- (IBAction)viewMyBadgesInPopover:(id)sender {
+    UIViewController* badgeView = [[BCBadgeManager sharedManager] badgeViewController];
+    
+    self.badgePopover = [[UIPopoverController alloc] initWithContentViewController:badgeView];
+    self.badgePopover.delegate = self;
+    
+    [self.badgePopover presentPopoverFromRect: [sender frame]
+                             inView: self.view
+           permittedArrowDirections: UIPopoverArrowDirectionAny
+                           animated: YES];
+    
+}
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    if (popoverController == self.badgePopover) {
+        self.badgePopover = nil;
     }
 }
 

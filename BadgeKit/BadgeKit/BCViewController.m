@@ -41,6 +41,8 @@ int const kBadgeViewHeight = 100;
     [self setBadgeCount];
     self.badges = [_badgeManager currentBadges];
     
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 460.0);
+    
     [self renderBadgesInto:self.badgesView];
 }
 
